@@ -50,7 +50,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/80 bg-white/80 px-4 py-3 shadow-xl shadow-slate-200/60 backdrop-blur-xl sm:px-5">
         <a className="flex items-center gap-3" href="#top" aria-label="EstateFlow AI home">
           <span className="accent-border accent-soft accent-text accent-shadow grid size-9 place-items-center rounded-full border">
-            <Icon name="layers" className="sm:size-4 size-2" />
+            <Icon name="layers" className="size-4" />
           </span>
           <span className="sm:text-sm text-xs font-semibold tracking-wide text-slate-950">EstateFlow AI</span>
         </a>
