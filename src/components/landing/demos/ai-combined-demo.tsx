@@ -151,7 +151,7 @@ export function AiCombinedDemo() {
 
   return (
     <div className="relative mx-auto mt-14 max-w-5xl lg:mt-0">
-      <div className="accent-glow-bg absolute -inset-8 rounded-[2rem] blur-3xl" />
+      <div className="accent-glow-bg absolute -inset-8 rounded-4xl blur-3xl" />
       <div className="float-card relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white/90 shadow-2xl shadow-slate-200/80 backdrop-blur-xl">
         <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
           <div className="flex items-center gap-3">
@@ -163,13 +163,13 @@ export function AiCombinedDemo() {
               <p className="text-xs font-medium text-slate-500">Chat and voice qualification in one flow</p>
             </div>
           </div>
-          <div className="live-pill rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <div className="live-pill text-nowrap rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
             2 channels active
           </div>
         </div>
 
         <div className="grid gap-4 p-4 sm:p-5 lg:grid-cols-[1fr_0.9fr]">
-          <div className="flex min-h-[32rem] flex-col rounded-3xl border border-slate-200 bg-slate-50/90 p-4">
+          <div className="flex min-h-128 flex-col rounded-3xl border border-slate-200 bg-slate-50/90 p-4">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="accent-text text-[0.68rem] font-semibold uppercase tracking-[0.26em]">Website chat</p>

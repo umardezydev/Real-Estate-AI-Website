@@ -50,9 +50,9 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/80 bg-white/80 px-4 py-3 shadow-xl shadow-slate-200/60 backdrop-blur-xl sm:px-5">
         <a className="flex items-center gap-3" href="#top" aria-label="EstateFlow AI home">
           <span className="accent-border accent-soft accent-text accent-shadow grid size-9 place-items-center rounded-full border">
-            <Icon name="layers" className="size-4" />
+            <Icon name="layers" className="sm:size-4 size-2" />
           </span>
-          <span className="text-sm font-semibold tracking-wide text-slate-950">EstateFlow AI</span>
+          <span className="sm:text-sm text-xs font-semibold tracking-wide text-slate-950">EstateFlow AI</span>
         </a>
         <nav className="hidden items-center gap-7 text-sm text-slate-600 md:flex">
           {navItems.map((item) => (
@@ -62,11 +62,11 @@ export function Header() {
           ))}
         </nav>
         <a
-          className="hover-accent-strong group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-slate-950 px-4 text-sm font-semibold text-white shadow-lg shadow-slate-300/50 transition"
+          className="hover-accent-strong group text-nowrap inline-flex h-10 items-center justify-center gap-2 rounded-full bg-slate-950 px-4 text-sm font-semibold text-white shadow-lg shadow-slate-300/50 transition"
           href="#pricing"
         >
-          Automate My Leads
-          <Icon name="arrow" className="size-4 transition group-hover:translate-x-0.5" />
+          Automate Leads
+          <Icon name="arrow" className="size-4 sm:inline hidden transition group-hover:translate-x-0.5" />
         </a>
       </div>
     </header>
