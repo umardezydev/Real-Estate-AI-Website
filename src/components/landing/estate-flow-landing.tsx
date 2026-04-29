@@ -9,6 +9,8 @@ import {
   useCases,
   workflow,
 } from "./data";
+import Image from "next/image";
+import brandMark from "@/assets/brand-mark.png";
 import { AiChatDemo } from "./demos/ai-chat-demo";
 import { AiCombinedDemo } from "./demos/ai-combined-demo";
 import { AiVoiceDemo } from "./demos/ai-voice-demo";
@@ -429,8 +431,14 @@ function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start lg:justify-between">
           <div className="max-w-md">
             <a className="inline-flex items-center gap-3" href="#top" aria-label="EstateFlow AI home">
-              <span className="accent-border accent-soft accent-text accent-shadow grid size-11 place-items-center rounded-full border">
-                <Icon name="layers" className="size-5" />
+              <span className="relative block h-12 w-20 shrink-0">
+                <Image
+                  alt=""
+                  className="object-contain"
+                  fill
+                  sizes="80px"
+                  src={brandMark}
+                />
               </span>
               <span className="text-lg font-semibold tracking-tight text-slate-950">EstateFlow AI</span>
             </a>

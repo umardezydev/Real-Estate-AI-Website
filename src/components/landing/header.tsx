@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import brandMark from "@/assets/brand-mark.png";
 import { navItems } from "./data";
 import { Icon } from "./icons";
 
@@ -49,8 +51,15 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/80 bg-white/80 px-4 py-3 shadow-xl shadow-slate-200/60 backdrop-blur-xl sm:px-5">
         <a className="flex items-center gap-3" href="#top" aria-label="EstateFlow AI home">
-          <span className="accent-border accent-soft accent-text accent-shadow grid size-9 place-items-center rounded-full border">
-            <Icon name="layers" className="size-4" />
+          <span className="relative block h-9 w-13 shrink-0">
+            <Image
+              alt=""
+              className="object-contain"
+              fill
+              priority
+              sizes="52px"
+              src={brandMark}
+            />
           </span>
           <span className="sm:text-sm text-xs font-semibold tracking-wide text-slate-950">EstateFlow AI</span>
         </a>
