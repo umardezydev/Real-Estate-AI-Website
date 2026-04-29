@@ -92,19 +92,19 @@ export const integrations = [
 export const testimonials = [
   {
     quote:
-      "EstateFlow AI gives our team the context we need before the first call. The biggest operational win is fewer missed opportunities after hours.",
+      "We were missing a lot of evening inquiries. Now the agents wake up to a short summary with budget, timing, and the property they asked about. It is not replacing our team, but it saves the messy first back-and-forth.",
     name: "Maya Reynolds",
     role: "Broker owner, Northline Realty",
   },
   {
     quote:
-      "Our website finally behaves like part of the sales operation. Inquiries are qualified, routed, and followed up without relying on manual chasing.",
+      "The best part for us is the handoff. Before, leads came in as a name and phone number. Now we usually know if they are pre-approved, when they want to tour, and which agent should follow up.",
     name: "Andre Collins",
     role: "Team lead, MetroNest Group",
   },
   {
     quote:
-      "It works like a front desk for rentals and sales. Conversations keep moving, and the most urgent prospects surface for our agents quickly.",
+      "We added it first for rental inquiries because our inbox was a mess. After two weeks, we started using it for seller valuation requests too. The routing still needs our rules, but the intake quality is much better.",
     name: "Lina Park",
     role: "Operations director, Harbor Keys",
   },

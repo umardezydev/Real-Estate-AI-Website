@@ -36,17 +36,17 @@
   --palette-option-9-glow-secondary: rgba(30, 64, 175, 0.16);
   --palette-option-9-glow-surface: rgba(45, 212, 191, 0.34);
 
-  /* Active palette: Option 2 - Aqua + Indigo */
-  --accent-primary: var(--palette-option-2-primary);
-  --accent-secondary: var(--palette-option-2-secondary);
-  --accent-soft: var(--palette-option-2-soft);
-  --accent-tint: var(--palette-option-2-tint);
-  --accent-border: var(--palette-option-2-border);
-  --accent-border-strong: var(--palette-option-2-border);
-  --accent-shadow: var(--palette-option-2-shadow);
-  --accent-glow-primary: rgba(6, 182, 212, 0.22);
-  --accent-glow-secondary: rgba(79, 70, 229, 0.16);
-  --accent-glow-surface: rgba(6, 182, 212, 0.36);
+  /* Active palette: Option 9 - Cobalt + Mint */
+  --accent-primary: var(--palette-option-9-primary);
+  --accent-secondary: var(--palette-option-9-secondary);
+  --accent-soft: var(--palette-option-9-soft);
+  --accent-tint: var(--palette-option-9-tint);
+  --accent-border: var(--palette-option-9-border);
+  --accent-border-strong: var(--palette-option-9-border-strong);
+  --accent-shadow: var(--palette-option-9-shadow);
+  --accent-glow-primary: var(--palette-option-9-glow-primary);
+  --accent-glow-secondary: var(--palette-option-9-glow-secondary);
+  --accent-glow-surface: var(--palette-option-9-glow-surface);
 }
 
 :root[data-theme="option-4"] {

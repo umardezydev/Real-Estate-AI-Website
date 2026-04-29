@@ -12,12 +12,12 @@ import {
 import { AiChatDemo } from "./demos/ai-chat-demo";
 import { AiCombinedDemo } from "./demos/ai-combined-demo";
 import { AiVoiceDemo } from "./demos/ai-voice-demo";
+import { FAQAccordion } from "./faq-accordion";
 import { StaticDashboardDemo } from "./demos/static-dashboard-demo";
 import { Header } from "./header";
 import { HeroParallaxBackdrop } from "./hero-parallax-backdrop";
 import { Icon, type IconName } from "./icons";
 import { ScrollReveal } from "./scroll-reveal";
-import { ThemeSwitcher } from "./theme-switcher";
 import type { CSSProperties } from "react";
 
 const heroDemos = {
@@ -28,6 +28,18 @@ const heroDemos = {
 };
 
 const ActiveHeroDemo = heroDemos.combined;
+
+const footerColumns = [
+  {
+    title: "Platform",
+    links: [
+      { label: "AI lead intake", href: "#platform" },
+      { label: "Qualification", href: "#workflow" },
+      { label: "CRM handoff", href: "#results" },
+      { label: "Pricing", href: "#pricing" },
+    ],
+  },
+];
 
 function SectionHeader({
   eyebrow,
@@ -55,40 +67,45 @@ function SectionHeader({
 
 function Hero() {
   return (
-    <section id="top" className="accent-section-gradient relative isolate overflow-hidden px-4 pt-32 sm:px-6 lg:pt-40">
+    <section id="top" className="accent-section-gradient relative isolate min-h-screen overflow-hidden px-4 pt-28 sm:px-6 lg:pt-30">
       <HeroParallaxBackdrop />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 pb-20 lg:grid-cols-[0.9fr_1.1fr] lg:pb-28">
+      <div className="mx-auto grid max-w-7xl items-start gap-8 pb-10 lg:grid-cols-[0.86fr_1.14fr] lg:pb-12">
         <div className="scroll-reveal" data-reveal="left">
           <div className="accent-border accent-text accent-soft-shadow inline-flex items-center gap-2 rounded-full border bg-white/80 px-4 py-2 text-sm backdrop-blur">
             <Icon name="spark" className="size-4" />
             AI intake and follow-up for modern real estate teams
           </div>
-          <h1 className="mt-8 max-w-4xl text-balance text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-            Convert more property inquiries into qualified conversations.
+          <h1 className="mt-6 max-w-3xl text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-6xl">
+            Turn{" "}
+            <span className="accent-text">property inquiries</span>
+            {" "}into{" "}
+            <span className="bg-[linear-gradient(90deg,var(--accent-primary),var(--accent-secondary))] bg-clip-text text-transparent">
+              qualified leads.
+            </span>
           </h1>
-          <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-600 sm:text-xl">
-            EstateFlow AI helps agents, brokerages, and property teams respond faster, qualify intent, route opportunities, and keep every handoff organized.
+          <p className="mt-5 max-w-2xl text-pretty text-lg font-medium leading-8 text-slate-600">
+            EstateFlow AI helps real estate teams respond faster, qualify intent, route opportunities, and keep every handoff organized.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
-              className="hover-accent-strong magnetic group inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white shadow-xl shadow-slate-300/70 transition"
+              className="hover-accent-strong magnetic group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white shadow-xl shadow-slate-300/70 transition"
               href="#pricing"
             >
               Automate My Leads
               <Icon name="arrow" className="size-4 transition group-hover:translate-x-1" />
             </a>
             <a
-              className="hover-accent-border hover-accent-soft inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-6 text-sm font-semibold text-slate-800 shadow-lg shadow-slate-200/50 backdrop-blur transition"
+              className="hover-accent-border hover-accent-soft inline-flex h-12 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-6 text-sm font-semibold text-slate-800 shadow-lg shadow-slate-200/50 backdrop-blur transition"
               href="#platform"
             >
               View Platform
             </a>
           </div>
-          <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3">
             {heroStats.map((stat) => (
-              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-lg shadow-slate-200/50 backdrop-blur" key={stat.label}>
-                <div className="text-2xl font-semibold text-slate-950">{stat.value}</div>
-                <div className="mt-1 text-xs leading-5 text-slate-500">{stat.label}</div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-lg shadow-slate-200/50 backdrop-blur" key={stat.label}>
+                <div className="text-xl font-semibold text-slate-950">{stat.value}</div>
+                <div className="mt-1 text-[0.7rem] leading-4 text-slate-500">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -126,12 +143,10 @@ function PlatformHeader() {
   return (
     <div className="mx-auto max-w-5xl text-center">
       <p className="section-eyebrow accent-text font-semibold uppercase">Platform</p>
-      <h2 className="mx-auto mt-5 max-w-4xl text-balance text-5xl font-semibold leading-[0.95] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+      <h2 className="mx-auto mt-5 max-w-4xl text-balance text-3xl font-semibold leading-[0.95] tracking-tight text-slate-950 sm:text-5xl">
         A lead engine disguised as a premium AI assistant.
       </h2>
-      <p className="mx-auto mt-7 max-w-3xl text-pretty text-lg leading-8 text-slate-600 sm:text-xl">
-        Bring chat, calls, scheduling, follow-up, and CRM context into one reliable intake layer for buyers, sellers, renters, and owners.
-      </p>
+     
     </div>
   );
 }
@@ -162,7 +177,7 @@ function PlatformCard({ item, index }: { item: (typeof capabilities)[number]; in
 
 function Platform() {
   return (
-    <section id="platform" className="bg-slate-50 px-4 py-24 sm:px-6 lg:py-32">
+    <section id="platform" className="bg-slate-50 px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="scroll-reveal" data-reveal="soft">
           <PlatformHeader />
@@ -179,8 +194,7 @@ function Platform() {
 
 function Workflow() {
   return (
-    <section id="workflow" className="section-grid-bg section-wash relative isolate overflow-hidden bg-white px-4 py-24 sm:px-6 lg:py-32">
-      <div className="accent-line absolute inset-x-0 top-1/2 -z-10 h-px" />
+    <section id="workflow" className="section-grid-bg section-wash relative isolate overflow-hidden bg-white px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="scroll-reveal" data-reveal="left">
@@ -218,8 +232,8 @@ function Workflow() {
 
 function Integrations() {
   return (
-    <section className="section-wash section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-24 sm:px-6 lg:py-32">
-      <div className="integration-panel motion-card scroll-reveal mx-auto max-w-7xl rounded-[2rem] border border-slate-200 bg-white/82 p-6 shadow-xl shadow-slate-200/60 backdrop-blur sm:p-8 lg:p-10" data-reveal="soft">
+    <section className="section-wash section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-18 sm:px-6 lg:py-24">
+      <div className="integration-panel motion-card scroll-reveal mx-auto max-w-7xl rounded-4xl border border-slate-200 bg-white/82 p-6 shadow-xl shadow-slate-200/60 backdrop-blur sm:p-8 lg:p-10" data-reveal="soft">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p className="section-eyebrow accent-text font-semibold uppercase">Integrations</p>
@@ -256,7 +270,7 @@ function Results() {
   ];
 
   return (
-    <section id="results" className="section-wash relative isolate overflow-hidden bg-white px-4 py-24 sm:px-6 lg:py-32">
+    <section id="results" className="section-wash relative isolate overflow-hidden bg-white px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="scroll-reveal" data-reveal="soft">
           <SectionHeader
@@ -285,7 +299,7 @@ function Results() {
 
 function Testimonials() {
   return (
-    <section className="section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-24 sm:px-6 lg:py-32">
+    <section className="section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="scroll-reveal" data-reveal="soft">
           <SectionHeader eyebrow="Testimonials" title="Operational confidence for busy real estate teams." />
@@ -315,7 +329,7 @@ function Testimonials() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="section-wash relative isolate overflow-hidden bg-white px-4 py-24 sm:px-6 lg:py-32">
+    <section id="pricing" className="section-wash relative isolate overflow-hidden bg-white px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="scroll-reveal" data-reveal="soft">
           <SectionHeader
@@ -370,29 +384,12 @@ function Pricing() {
 
 function FAQ() {
   return (
-    <section className="section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-24 sm:px-6 lg:py-32">
+    <section className="section-grid-bg relative isolate overflow-hidden bg-slate-50 px-4 py-18 sm:px-6 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
         <div className="scroll-reveal" data-reveal="left">
           <SectionHeader align="left" eyebrow="FAQ" title="Designed for practical real estate operations." />
         </div>
-        <div className="grid gap-4">
-          {faqs.map((item, index) => (
-            <details
-              className="group motion-card scroll-reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60"
-              key={item.question}
-              data-reveal="right"
-              style={{ "--reveal-delay": `${index * 80}ms` } as CSSProperties}
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-slate-950">
-                {item.question}
-                <span className="accent-soft accent-text grid size-8 shrink-0 place-items-center rounded-full transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-5 text-sm leading-7 text-slate-600">{item.answer}</p>
-            </details>
-          ))}
-        </div>
+        <FAQAccordion items={faqs} />
       </div>
     </section>
   );
@@ -400,8 +397,8 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="bg-white px-4 py-24 sm:px-6 lg:py-32">
-      <div className="accent-cta-gradient accent-border scroll-reveal relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] border px-6 py-16 text-center text-slate-950 shadow-2xl shadow-slate-200/80 sm:px-10" data-reveal="soft">
+    <section className="bg-white px-4 py-18 sm:px-6 lg:py-24">
+      <div className="accent-cta-gradient accent-border scroll-reveal relative mx-auto max-w-7xl overflow-hidden rounded-4xl border px-6 py-16 text-center text-slate-950 shadow-2xl shadow-slate-200/80 sm:px-10" data-reveal="soft">
         <div className="absolute inset-0 opacity-50 [background:radial-gradient(circle_at_20%_20%,white,transparent_28%),radial-gradient(circle_at_80%_30%,#bae6fd,transparent_30%)]" />
         <div className="relative mx-auto max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-slate-700">EstateFlow AI</p>
@@ -412,7 +409,7 @@ function FinalCTA() {
             EstateFlow AI turns first contact into structured context, timely follow-up, and a cleaner handoff for the people responsible for closing.
           </p>
           <a
-            className="hover-accent-strong mt-9 inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white transition"
+            className="hover-accent-strong mt-9 inline-flex h-13 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white transition"
             href="#top"
           >
             Automate My Leads
@@ -426,21 +423,42 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 px-4 py-10 sm:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-3">
-          <span className="accent-border accent-soft accent-text grid size-8 place-items-center rounded-full border">
-            <Icon name="layers" className="size-4" />
-          </span>
-          <span className="font-semibold text-slate-950">EstateFlow AI</span>
-        </div>
-        <p>AI-powered intake, qualification, scheduling, and follow-up for real estate teams.</p>
-        <div className="flex gap-5">
-          {navItems.map((item) => (
-            <a className="transition hover:text-slate-950" href={item.href} key={item.href}>
-              {item.label}
+    <footer className="section-grid-bg accent-cta-gradient relative isolate overflow-hidden border-t border-slate-200 bg-slate-50 px-4 py-12 shadow-[0_-24px_60px_rgba(15,23,42,0.04)] sm:px-6 lg:py-16">
+      <div className="absolute inset-0 opacity-55 [background:radial-gradient(circle_at_8%_18%,white,transparent_26%),radial-gradient(circle_at_88%_18%,var(--accent-glow-surface),transparent_28%)]" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start lg:justify-between">
+          <div className="max-w-md">
+            <a className="inline-flex items-center gap-3" href="#top" aria-label="EstateFlow AI home">
+              <span className="accent-border accent-soft accent-text accent-shadow grid size-11 place-items-center rounded-full border">
+                <Icon name="layers" className="size-5" />
+              </span>
+              <span className="text-lg font-semibold tracking-tight text-slate-950">EstateFlow AI</span>
             </a>
-          ))}
+            <p className="mt-5 text-pretty text-base font-medium leading-7 text-slate-600">
+              AI-powered intake, qualification, scheduling, and follow-up for real estate teams that cannot afford to miss ready prospects.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-1">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-950">{column.title}</h3>
+                <ul className="mt-4 space-y-3">
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <a className="text-sm font-medium text-slate-600 transition hover:text-slate-950" href={link.href}>
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-slate-200 pt-5 text-sm text-slate-500">
+          <p>© 2026 EstateFlow AI. Built for modern real estate operations.</p>
         </div>
       </div>
     </footer>
@@ -463,7 +481,6 @@ export function EstateFlowLanding() {
       <FinalCTA />
       <Footer />
       <ScrollReveal />
-      <ThemeSwitcher />
     </main>
   );
 }

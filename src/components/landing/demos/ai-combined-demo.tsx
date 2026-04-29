@@ -153,34 +153,19 @@ export function AiCombinedDemo() {
     <div className="relative mx-auto mt-14 max-w-5xl lg:mt-0">
       <div className="accent-glow-bg absolute -inset-8 rounded-4xl blur-3xl" />
       <div className="float-card relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white/90 shadow-2xl shadow-slate-200/80 backdrop-blur-xl">
-        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
-          <div className="flex items-center gap-3">
-            <span className="accent-soft accent-text grid size-10 place-items-center rounded-2xl">
-              <Icon name="sync" className="size-5" />
-            </span>
-            <div>
-              <p className="text-sm font-semibold tracking-tight text-slate-950">Omnichannel AI Desk</p>
-              <p className="text-xs font-medium text-slate-500">Chat and voice qualification in one flow</p>
-            </div>
-          </div>
-          <div className="live-pill text-nowrap rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-            2 channels active
-          </div>
-        </div>
-
-        <div className="grid gap-4 p-4 sm:p-5 lg:grid-cols-[1fr_0.9fr]">
-          <div className="flex min-h-128 flex-col rounded-3xl border border-slate-200 bg-slate-50/90 p-4">
-            <div className="mb-4 flex items-center justify-between">
+        <div className="grid gap-3 p-3 sm:p-4 lg:grid-cols-[1fr_0.9fr]">
+          <div className="flex min-h-[27rem] flex-col rounded-3xl border border-slate-200 bg-slate-50/90 p-3.5">
+            <div className="mb-3 flex items-center justify-between">
               <div>
                 <p className="accent-text text-[0.68rem] font-semibold uppercase tracking-[0.26em]">Website chat</p>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">Buyer conversation</h3>
+                <h3 className="mt-1.5 text-lg font-semibold tracking-tight text-slate-950">Buyer conversation</h3>
               </div>
-              <span className="accent-soft accent-text grid size-10 place-items-center rounded-2xl">
-                <Icon name="message" className="size-5" />
+              <span className="accent-soft accent-text grid size-9 place-items-center rounded-2xl">
+                <Icon name="message" className="size-4" />
               </span>
             </div>
 
-            <div className="flex flex-1 flex-col justify-end space-y-3 overflow-hidden">
+            <div className="flex flex-1 flex-col justify-end space-y-2.5 overflow-hidden">
               {visibleMessages.map((message, index) => {
                 const isAi = message.role === "ai";
 
@@ -189,8 +174,8 @@ export function AiCombinedDemo() {
                     <div
                       className={
                         isAi
-                          ? "max-w-[88%] rounded-2xl border border-slate-200 bg-white p-4 text-[0.84rem] leading-6 text-slate-700 shadow-sm shadow-slate-200/70"
-                          : "max-w-[88%] rounded-2xl bg-slate-950 p-4 text-[0.84rem] leading-6 text-white shadow-lg shadow-slate-300/60"
+                          ? "max-w-[88%] rounded-2xl border border-slate-200 bg-white p-3 text-[0.8rem] leading-5 text-slate-700 shadow-sm shadow-slate-200/70"
+                          : "max-w-[88%] rounded-2xl bg-slate-950 p-3 text-[0.8rem] leading-5 text-white shadow-lg shadow-slate-300/60"
                       }
                     >
                       {message.text}
@@ -211,7 +196,7 @@ export function AiCombinedDemo() {
 
               {activeMessage?.role === "ai" && typedText ? (
                 <div className="flex justify-start">
-                  <div className="max-w-[88%] rounded-2xl border border-slate-200 bg-white p-4 text-[0.84rem] leading-6 text-slate-700 shadow-sm shadow-slate-200/70">
+                  <div className="max-w-[88%] rounded-2xl border border-slate-200 bg-white p-3 text-[0.8rem] leading-5 text-slate-700 shadow-sm shadow-slate-200/70">
                     {typedText}
                     <span className="typing-cursor" />
                   </div>
@@ -219,9 +204,9 @@ export function AiCombinedDemo() {
               ) : null}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm shadow-slate-200/60">
+            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm shadow-slate-200/60">
               <div className="flex items-center gap-2">
-                <div className="min-w-0 flex-1 rounded-full bg-slate-50 px-4 py-3 text-[0.84rem] font-medium text-slate-500">
+                <div className="min-w-0 flex-1 rounded-full bg-slate-50 px-3 py-2.5 text-[0.8rem] font-medium text-slate-500">
                   {activeMessage?.role === "visitor" && typedText ? (
                     <>
                       {typedText}
@@ -232,39 +217,39 @@ export function AiCombinedDemo() {
                   )}
                 </div>
                 <button
-                  className={`hover-accent-strong grid size-11 shrink-0 place-items-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-300/60 transition ${
+                  className={`hover-accent-strong grid size-10 shrink-0 place-items-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-300/60 transition ${
                     isSending ? "send-pulse" : ""
                   }`}
                   type="button"
                   aria-label="Send chat message"
                 >
-                  <Icon name="arrow" className="size-5" />
+                  <Icon name="arrow" className="size-4" />
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="accent-border accent-soft rounded-3xl border p-5">
+          <div className="grid gap-3">
+            <div className="accent-border accent-soft rounded-3xl border p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="accent-text text-[0.68rem] font-semibold uppercase tracking-[0.26em]">Voice call</p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">Seller intake</h3>
+                  <h3 className="mt-1.5 text-lg font-semibold tracking-tight text-slate-950">Seller intake</h3>
                 </div>
-                <div className="relative grid size-14 place-items-center rounded-full bg-slate-950 text-white">
+                <div className="relative grid size-12 place-items-center rounded-full bg-slate-950 text-white">
                   <span className="voice-ring absolute inset-1 rounded-full border border-white/25" />
                   <span className="voice-ring voice-ring-delay absolute inset-3 rounded-full border border-white/20" />
-                  <Icon name="phone" className="relative size-6" />
+                  <Icon name="phone" className="relative size-5" />
                 </div>
               </div>
 
-              <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm shadow-slate-200/70">
+              <div className="mt-4 rounded-2xl bg-white p-3 shadow-sm shadow-slate-200/70">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Live call</p>
-                    <p className="mt-1 text-2xl font-semibold text-slate-950">{formatDuration(callSeconds)}</p>
+                    <p className="mt-1 text-xl font-semibold text-slate-950">{formatDuration(callSeconds)}</p>
                   </div>
-                  <div className="flex h-12 items-end gap-1.5">
+                  <div className="flex h-10 items-end gap-1.5">
                     {[0, 1, 2, 3, 4, 5, 6].map((bar) => (
                       <span
                         className="voice-bar accent-fill-gradient w-1.5 rounded-full"
@@ -276,13 +261,13 @@ export function AiCombinedDemo() {
                 </div>
               </div>
 
-              <div className="mt-4 space-y-3">
+              <div className="mt-3 space-y-2.5">
                 {voiceNotes.map((note, index) => {
                   const isActive = index === activeVoiceNote;
 
                   return (
                     <div
-                      className={`flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm shadow-sm transition ${
+                      className={`flex items-center gap-3 rounded-2xl bg-white px-3 py-2.5 text-sm shadow-sm transition ${
                         isActive
                           ? "voice-note-active text-slate-950 shadow-slate-300/80"
                           : "text-slate-600 shadow-slate-200/70"
@@ -303,20 +288,20 @@ export function AiCombinedDemo() {
 
             <div className="grid grid-cols-3 gap-3">
               {channelStats.map((stat) => (
-                <div className="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm shadow-slate-200/60" key={stat.label}>
-                  <p className="text-xs leading-5 text-slate-500">{stat.label}</p>
-                  <p className="mt-2 text-lg font-semibold text-slate-950">{stat.value}</p>
+                <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm shadow-slate-200/60" key={stat.label}>
+                  <p className="text-[0.7rem] leading-4 text-slate-500">{stat.label}</p>
+                  <p className="mt-1.5 text-base font-semibold text-slate-950">{stat.value}</p>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/60">
+            <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/60">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-semibold tracking-tight text-slate-950">Unified handoff</p>
-                  <p className="mt-1 text-sm text-slate-500">CRM record, booking context, and transcript summary merged.</p>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">CRM record, booking context, and transcript summary merged.</p>
                 </div>
-                <Icon name="layers" className="accent-text size-6 shrink-0" />
+                <Icon name="layers" className="accent-text size-5 shrink-0" />
               </div>
             </div>
           </div>
